@@ -23,6 +23,4 @@ jobs:
           echo "Daily commit on $(date)" >> daily_update.txt
           git add daily_update.txt
           git commit -m "Automated daily commit $(date)" || echo "No changes to commit"
-          git push origin main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/RitushreeM/dev.git main
